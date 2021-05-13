@@ -1,0 +1,39 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+#Write your code here
+class comp :
+    def __init__(self,r,i): 
+        self.r = r 
+        self.i = i 
+        
+    def add(self,other) : 
+           other.real2 = real2 
+           other.img2   = img2  
+           c = complex(self.r+other.real2,self.i+other.i) 
+           print("Sum of the two Complex numbers :{}{}{}i".format(int(c.real), "+" ,int(c.imag)))
+           
+    def sub(self,other) :
+           x = complex(self.r-other.r,self.i-other.img2)
+           print("Subtraction of the two Complex numbers :{}{}{}i".format(int(x.real), "+" if x.imag >=0 else "-",abs(int(x.imag)))     )
+
+if __name__ == '__main__':
+    
+    real1 = int(input().strip())
+    img1 = int(input().strip())
+    
+    real2 = int(input().strip())
+    img2 = int(input().strip())
+    
+    p1 = comp(real1,img1)
+    p2 = comp(real2,img2)
+
+    p1.add(p2)
+    p1.sub(p2)
