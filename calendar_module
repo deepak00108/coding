@@ -1,0 +1,52 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'calen' function below.
+#
+# The function accepts TUPLE datetuple as parameter.  
+#
+import calendar ,collections 
+from collections import Counter
+def usingcalendar(d): 
+    # Write your code here 
+     yy = d[0]
+     mm = d[1] 
+
+     x = calendar.isleap(yy) 
+     
+     if x == True : 
+         mm = 2 
+     
+     print(calendar.month(yy,mm))     
+     a = [] 
+     c=[]
+     my_cal= calendar.Calendar()
+     for x in my_cal.itermonthdates(yy,mm): 
+        a.append(x)  
+        if x.month == mm :
+                    c.append(x.strftime('%A')) 
+     c = Counter(c) 
+     
+     
+         
+     print(a[-7::1]) 
+     print(list(c.most_common(1))[0][0]) 
+
+if __name__ == '__main__':
+    qw1 = []
+
+    for _ in range(3):
+        qw1_item = int(input().strip())
+        qw1.append(qw1_item)
+        
+    tup=tuple(qw1)
+
+    usingcalendar(tup)
