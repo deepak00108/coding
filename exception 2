@@ -1,0 +1,100 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'FORLoop' function below.
+#
+
+def FORLoop():
+    # Write your code  
+    n = int(input()) 
+    a=[]
+    for i in range(n) :
+        a.append(int(input()))
+    print(a) 
+    iter1 = iter(a)  
+    for i in range(len(a)) :
+        print(next(iter1)) 
+    return iter1
+if __name__ == '__main__': 
+
+
+
+
+
+
+
+
+==============================================================Exception 2 atm : =================================================== 
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'Bank_ATM' function below.
+#
+# Define the Class for user-defined exceptions "MinimumDepositError" and "MinimumBalanceError" here
+
+
+
+class MinimumDepositError(Exception): 
+    def __init__(self):
+        print("The Minimum amount of Deposit should be 2000.")
+    
+class MinimumBalanceError(Exception):
+    def __init__(self):
+        print("You cannot withdraw this amount due to Minimum Balance Policy")
+
+def Bank_ATM(balance,choice,amount):
+    
+    if balance < 500 : 
+        raise ValueError("As per the Minimum Balance Policy, Balance must be at least 500")
+    elif choice == 1 : 
+      
+      if amount<2000 :
+        raise MinimumDepositError
+      else : 
+        balance = balance + amount  
+        print("Updated Balance Amount:  {}".format(balance)) 
+    elif choice == 2 : 
+      
+        balance = balance - amount 
+        
+        if balance < 500 :  
+            
+            raise MinimumBalanceError
+        else : 
+            
+            print("Updated Balance Amount:  {}".format(balance)) 
+            
+            
+        
+if __name__ == '__main__':
+    
+    bal = int(input())
+    ch = int(input())
+    amt = int(input())
+    
+    try:
+        Bank_ATM(bal,ch,amt)
+    
+    
+    except ValueError as e:
+        print(e)
+    except MinimumDepositError as e:
+        print(e)
+    except MinimumBalanceError as e:
+        print(e)
