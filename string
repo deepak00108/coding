@@ -1,0 +1,47 @@
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'strmethod' function below.
+#
+# The function accepts following parameters:
+#  1. STRING para
+#  2. STRING spch1
+#  3. STRING spch2
+#  4. LIST li1
+#  5. STRING strf
+# 
+import collections 
+from collections import Counter
+def stringmethod(para, special1, special2, list1, strfind):
+    # Write your code here 
+    word1=para
+    for i in special1:
+        word1=word1.replace(i,'')
+    word2=word1[0:70]
+    word2=word2[-1:-71:-1]
+    print(word2)
+    l=special2.join(list(word2.replace(" ",'')))
+    print(l)
+    count=0
+    for i in list1:
+        if (i in para):count+=1
+    if count==len(list1):
+        print("Every string in ",list1,"were present")
+    else:print("Every string in ",list1,"were not present")
+    print(word1.split()[0:20])
+    list2=list()
+    freq=[]
+    for i in word1.split(" "):
+        if word1.count(i)<13:
+            if i in freq:pass
+            else:freq.append(i)
+    list2=freq[-1:-21:-1]
+    print(list2[-1:-21:-1])
+    print(word1.rindex(strfind))
