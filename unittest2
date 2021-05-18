@@ -117,8 +117,7 @@ class TestCircleArea(unittest.TestCase):
         self.assertEqual(c3.circumference(),6283.19) 
         
         
-        
-        
+if __name__ == '__main__':
        fptr = open('output.txt', 'w')
     
     runner = unittest.TextTestRunner(fptr)
@@ -157,4 +156,4 @@ class TestCircleArea(unittest.TestCase):
         
         
 
-if __name__ == '__main__':
+
